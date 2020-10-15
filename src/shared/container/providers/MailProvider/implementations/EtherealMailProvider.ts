@@ -1,13 +1,10 @@
 import nodemailer, { Transporter } from 'nodemailer';
 import { injectable, inject } from 'tsyringe';
+
 import IMailTemplateProvider from '@shared/container/providers/MailTemplateProvider/models/IMailTemplateProvider';
 import IMailProvider from '../models/IMailProvider';
 import ISendMailDTO from '../dtos/ISendMailDTO';
 
-interface IMessage {
-  to: string;
-  body: string;
-}
 @injectable()
 export default class EtherealMailProvider implements IMailProvider {
   private client: Transporter;
@@ -40,7 +37,7 @@ export default class EtherealMailProvider implements IMailProvider {
     const message = await this.client.sendMail({
       from: {
         name: from?.name || 'Equipe GoBarber',
-        address: from?.email || 'equipe@gobarber.com',
+        address: from?.email || 'equipe@gobarber.com.br',
       },
       to: {
         name: to.name,
