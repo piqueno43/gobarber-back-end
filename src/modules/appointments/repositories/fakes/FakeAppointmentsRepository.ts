@@ -4,7 +4,7 @@ import { isEqual, getMonth, getYear } from 'date-fns';
 import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 
-import IFindAllInMontFromProviderDTO from '@modules/appointments/dtos/IFindAllInMontFromProviderDTO';
+import IFindAllInMontFromProviderDTO from '@modules/appointments/dtos/IFindAllInMonthFromProviderDTO';
 import Appointment from '../../infra/typeorm/entities/Appointment';
 
 class AppointmentRepository implements IAppointmentsRepository {
