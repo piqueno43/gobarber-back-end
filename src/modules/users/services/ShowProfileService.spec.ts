@@ -30,6 +30,7 @@ describe('UpdateProfile', () => {
     expect(profile.name).toBe('John Doe');
     expect(profile.email).toBe('jonhdoe@example.com');
   });
+
   it('should be able show the profile from non-existing user', async () => {
     expect(
       showProfile.execute({
