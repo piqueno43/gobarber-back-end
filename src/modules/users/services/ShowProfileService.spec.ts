@@ -1,12 +1,9 @@
-import 'reflect-metadata';
-
 import AppError from '@shared/errors/AppError';
 
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import ShowProfileService from './ShowProfileService';
 
 let fakeUsersRepository: FakeUsersRepository;
-
 let showProfile: ShowProfileService;
 
 describe('UpdateProfile', () => {
@@ -19,7 +16,7 @@ describe('UpdateProfile', () => {
   it('should be able show the profile', async () => {
     const user = await fakeUsersRepository.create({
       name: 'John Doe',
-      email: 'jonhdoe@example.com',
+      email: 'johndoe@example.com',
       password: '123456',
     });
 
@@ -28,10 +25,10 @@ describe('UpdateProfile', () => {
     });
 
     expect(profile.name).toBe('John Doe');
-    expect(profile.email).toBe('jonhdoe@example.com');
+    expect(profile.email).toBe('johndoe@example.com');
   });
 
-  it('should be able show the profile from non-existing user', async () => {
+  it('should not be able show the profile from non-existing user', async () => {
     expect(
       showProfile.execute({
         user_id: 'non-existing-user-id',
