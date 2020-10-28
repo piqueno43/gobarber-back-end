@@ -1,17 +1,12 @@
-import 'reflect-metadata';
-
-// import AppError from '@shared/errors/AppError';
-
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import ListProviderDayAvailabilityService from './ListProviderDayAvailabilityService';
 
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
 let listProviderDayAvailability: ListProviderDayAvailabilityService;
 
-describe('ListProviderDayAvailability', () => {
+describe('ListProviderMonthAvailability', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
-
     listProviderDayAvailability = new ListProviderDayAvailabilityService(
       fakeAppointmentsRepository,
     );
@@ -48,6 +43,7 @@ describe('ListProviderDayAvailability', () => {
         { hour: 10, available: false },
         { hour: 13, available: true },
         { hour: 14, available: false },
+        { hour: 15, available: false },
         { hour: 16, available: true },
       ]),
     );
